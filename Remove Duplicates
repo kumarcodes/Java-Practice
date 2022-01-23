@@ -1,0 +1,25 @@
+package com.java.rohit;
+
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
+
+public class RemoveDuplicates {
+
+	public static void main(String[] args) {
+		String S="zvvo";
+		LinkedHashMap<Character,Integer> linkedhm=new LinkedHashMap<>();
+        for(int i=0;i<S.length();i++){
+            if(linkedhm.containsKey(S.charAt(i))){
+                linkedhm.put(S.charAt(i),linkedhm.get(S.charAt(i)+1));
+            }
+            else{
+                linkedhm.put(S.charAt(i),1);
+            }
+        }
+        for(Entry<Character,Integer> entry:linkedhm.entrySet()) {
+			System.out.print(entry.getKey());
+		}
+
+	}
+
+}
